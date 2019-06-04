@@ -1,1 +1,1 @@
-<div id="footer-area">This is the footer</div>
+<div id="footer">This is the footer</div>

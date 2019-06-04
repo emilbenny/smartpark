@@ -1,1 +1,1 @@
-<div id="content-main">This is the content area</div>
+<div id="content">This is the content area</div>

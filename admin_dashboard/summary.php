@@ -9,8 +9,8 @@
     <?php include("includes/navbar.php")?>
     <?php include("includes/header.php")?>
     
-    
-    <div id="conent-summary">
+    <div id="wrapper">
+    <div id="content">
         <h2>Welcome to the Summary Page</h2>
         
         <p>
@@ -46,6 +46,7 @@
                 mysqli_close($con);
             ?>
         </p>
+    </div>
     </div>
     
         
