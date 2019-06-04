@@ -89,7 +89,7 @@
                 $count[23]++;
             }
         }
-            var_dump($count);
+            //var_dump($count);
             
         
     }
@@ -138,7 +138,7 @@
           width: 800,
           legend: { position: 'none' },
           chart: {
-            title: 'Chess opening moves',
+            title: 'Graph showing Frequency of Time of the Day to the frequency of the cars',
             subtitle: 'popularity by percentage' },
           axes: {
             x: {
@@ -160,7 +160,7 @@
     <?php include("includes/header.php")?>
     <div id="wrapper">
     <div id="content">This is the content area
-       <div id="top_x_div" style="width: 1000px; height: 600px;"></div> 
+       <div id="top_x_div" style="width: 800px; height: 600px;"></div> 
     </div>
     </div>
     <?php include("includes/footer-area.php")?>
