@@ -9,7 +9,7 @@
     <?php include("includes/navbar.php")?>
     <?php include("includes/header.php")?>
     
-    <div id="wrapper">
+    <div id="wrapper" class="container m-3">
     <div id="content">
         <h2>Welcome to the Summary Page</h2>
         
@@ -33,9 +33,10 @@
                 $result=mysqli_query($con,"select * from parking_details");
                 if (mysqli_num_rows($result) > 0) {
                 // output data of each row
-                    echo "<table><tr><th>ID</th><th>Rego</th><th>Entry Time</th><th>Exit Time</th><th>Slot No</th><th>Date</th></tr>";
+                    echo "<table class='m-2 slotsTable'><tr><th>ID</th><th>Rego</th><th>Entry Time</th><th>Exit Time</th><th>Slot No</th><th>Date</th></tr>";
                     while($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr><td>" . $row["id"]. "</td><td>".$row["rego_plate"]. "</td><td>" .$row["entry_time"]. "</td><td>".$row["exit_time"]."</td>";
+                        echo "<tr><td>" . $row["id"]. "</td><td>".$row["rego_plate"]. "</td><td>" . date( "h:m", strtotime($row["entry_time"])) . 
+                                "</td><td>".date( "h:m", strtotime($row["exit_time"])) ."</td>";
                         echo "<td>".$row["slot_no"]."</td><td>".$row["date"]."</td></tr>";
                     } 
                     echo "</table>";

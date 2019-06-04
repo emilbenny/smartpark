@@ -1,4 +1,12 @@
 <?php
+    session_start();
+//var_dump($_SESSION['userId']);
+//die();
+     if (!isset($_SESSION['userId'])) {
+         header("Location: login.php");
+    } else {
+      //  logged in
+    } 
     $con= mysqli_connect("localhost", "root", "", "smartpark");
     $result=mysqli_query($con,"select * from parking_details");
     if(!$result){
@@ -130,8 +138,7 @@
           ["20:00 Hrs ", <?php echo $count[20]?>],
           ["21:00 Hrs ", <?php echo $count[21]?>],
           ["22:00 Hrs ", <?php echo $count[22]?>],
-          ["23:00 Hrs ", <?php echo $count[23]?>],
-          ['Other', 3]
+          ["23:00 Hrs ", <?php echo $count[23]?>]
         ]);
 
         var options = {
@@ -139,10 +146,10 @@
           legend: { position: 'none' },
           chart: {
             title: 'Graph showing Frequency of Time of the Day to the frequency of the cars',
-            subtitle: 'popularity by percentage' },
+            subtitle: 'Time by frequency' },
           axes: {
             x: {
-              0: { side: 'top', label: 'White to move'} // Top x-axis.
+              0: { side: 'top', label: 'Frequency to hours'} // Top x-axis.
             }
           },
           bar: { groupWidth: "90%" }
@@ -158,9 +165,11 @@
 <body>
     <?php include("includes/navbar.php")?>
     <?php include("includes/header.php")?>
-    <div id="wrapper">
-    <div id="content">This is the content area
-       <div id="top_x_div" style="width: 800px; height: 600px;"></div> 
+    <div id="wrapper" class="container mt-5">
+    <div id="content m-3">
+        <div class="graphWrap m-3">
+            <div id="top_x_div" style="height:500px" ></div> 
+        </div>
     </div>
     </div>
     <?php include("includes/footer-area.php")?>
